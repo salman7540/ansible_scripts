@@ -38,3 +38,8 @@ e.g. hosts.ini file
 ubuntu@13.233.161.157
 ubuntu@3.108.223.143
 ec2-user@13.111.214.140
+
+
+-------------------------------------------------------------------------------------------------------------------
+create role and accordingly edit filed in role and refrence it in yaml files -
+ansible-galaxy init <role_name>  //this will create various folders like tasks, vars, defaults etc.
