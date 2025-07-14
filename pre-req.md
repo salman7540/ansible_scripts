@@ -28,7 +28,7 @@ Control node to have -
 4. Give passwordless access to control node on managed nodes -
    ssh-copy-id -i ~/.ssh/id_rsa.pub -o IdentityFile=~/Downloads/ansible_host.pem ubuntu@3.108.223.143
 or
-4. run ssh-gen [on both control and managed noded]
+4. run ssh-keygen [on both control and managed noded]
    copy public_key [id_rsa.pub] of control node in authorized_keyw file of all managed nodes
 
 Run playbook - 
