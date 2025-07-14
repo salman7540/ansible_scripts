@@ -3,16 +3,20 @@
   hosts: localhost
   gather_facts: false
 
-  tasks:
+ tasks:
     - name: List S3 buckets in AWS account   #AWS account to have S3 bucket with versioning disabled
       amazon.aws.s3_bucket_info:
+        access_key: "{{ec2_access}}"  # From vault as defined
+        secret_key: "{{ec2_secret}}"  # From vault as defined
       register: result
-    
+
     - debug:
         var: result
-    
+
     - name: Enable versioning on S3 bucket
       amazon.aws.s3_bucket:
+        access_key: "{{ec2_access}}"  # From vault as defined
+        secret_key: "{{ec2_secret}}"  # From vault as defined
         name: "{{ item.name }}"
         versioning: yes
-      loop: "{{ result.buckets }}" 
+      loop: "{{ result.buckets }}"
